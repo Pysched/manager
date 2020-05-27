@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+ <h3>Login</h3>
+ <div class="container">
+    <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+            <form method="POST" class="col s12" action="{{ url_for('login') }}">
+                <div class="row">
+                    <div class="form-group">
+                        <i class="material-icons prefix">assignment</i>
+                        <label for="inputEmail">User Name</label>
+                        <input name="user_name" type="text" class="form-control" placeholder="User name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <i class="material-icons prefix">assignment</i>
+                        <label for="inputPass">Password</label>
+                        <input name="pass" type="password" class="form-control" placeholder="Password">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            </form>
+            <div>Don't have an account?<a href="{{ url_for('register') }}">Sign up here</a></div>
+        </div>
+    </div>
+</div>
+
+
+
+ {% endblock %}

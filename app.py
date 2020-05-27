@@ -1,7 +1,8 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import bcrypt
 
 app = Flask(__name__)
 
@@ -13,6 +14,14 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
+def index():
+    if 'username' in session:
+        return 'You are logged in already' + sesion['username']
+
+    return render_template('index.html')
+
+
+
 @app.route('/get_tasks')
 def get_tasks():
     return render_template("tasks.html", tasks=mongo.db.tasks.find(),
