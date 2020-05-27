@@ -62,4 +62,5 @@ def add_task():
 
 
 if __name__ == '__main__':
+    app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'), port=int(os.environ.get("PORT")), debug=True)
