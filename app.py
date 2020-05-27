@@ -16,7 +16,7 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     if 'username' in session:
-        return 'You are logged in as ' + session['username']
+        return render_template('main.html')
 
     return render_template('index.html')
 
@@ -42,12 +42,23 @@ def register():
 
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
-            users.insert({'name': request.form['username'], 'password': hashpass})
+            users.insert_one({'name': request.form['username'], 'password': hashpass})
             session['username'] = request.form['username']
             return redirect(url_for('index'))
         return 'That username already exists!'
 
     return render_template('register.html')
+
+
+@app.route('/logout')
+def logout():
+    '''
+    Remove the session cookie and end the user session
+    '''
+    session.pop('users', None)
+    # flash(Markup("You were successfully logged out. Come back soon!"))
+
+    return redirect(url_for('mainnl.html'))
 
 
 @app.route('/get_tasks')

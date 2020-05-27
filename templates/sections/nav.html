@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<!--Main Nav-->
+<!-- <nav class="nav-extended">
+    <div class="nav-wrapper">
+        <a href="{{ url_for('main.index') }}" class="brand-logo collection-item avatar"  aria-label="Brand logo and link to home page">
+            <img class="circle" src="{{ url_for('static', filename='img/favicon-logo.png') }}" alt="Delicious Dishes Chef Logo">
+            Fine Dining
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"  aria-label="Sidenav trigger">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="{{ url_for('main.index') }}" aria-label="Home page">
+                    <i class="btn-icon fas fa-home" aria-hidden="true"></i>
+                    <span class="btn-text uppercase">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('recipes.get_recipes', page=1) }}" aria-label="Browse page">
+                    <i class="btn-icon fas fa-utensils" aria-hidden="true"></i>
+                    <span class="btn-text uppercase">Browse</span>
+                </a>
+            </li>
+            Additional options if user is logged in
+            {% if session.user %}
+                <li>
+                    <a href="{{ url_for('users.profile', username=session['user']) }}" aria-label="Profile page">
+                        <i class="btn-icon fas fa-user" aria-hidden="true"></i>
+                        <span class="btn-text uppercase">{{ session['user'] | capitalize }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('recipes.add_recipe') }}" aria-label="Add recipe page">
+                        <i class="btn-icon fas fa-plus" aria-hidden="true"></i>
+                        <span class="btn-text uppercase">Add Recipe</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('users.logout') }}" aria-label="Logout">
+                        <i class="btn-icon fas fa-sign-out-alt" aria-hidden="true"></i>
+                        <span class="btn-text uppercase">Logout</span>
+                    </a>
+                </li>
+            If there is no user in session
+            {% else %}
+                <li>
+                    <a href="{{ url_for('users.login_register') }}" aria-label="Login">
+                        <i class="btn-icon fas fa-sign-in-alt" aria-hidden="true"></i>
+                        <span class="btn-text uppercase">Login</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav> -->
+
+<h3>nav</h3>
